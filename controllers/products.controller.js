@@ -6,7 +6,7 @@ const getProducts = async (req, res) => {
         products = await productModel.find();
         
     } catch (error) {
-        res.status(404);
+        res.status(error);
     }
 
     return res.send(products);
