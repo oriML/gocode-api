@@ -13,12 +13,16 @@ app.use(cors());
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('Hey this is my API running 🥳')
+})
+
 app.use('/api', routes);
 
 app.listen(port, () => {
     dbConnection()
-    .then(() => console.log('db connected'))    
-    .catch(console.log);
-    
+        .then(() => console.log('db connected'))
+        .catch(console.log);
+
     console.log(`PORT ${port}`);
 });
